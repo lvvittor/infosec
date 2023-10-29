@@ -1,0 +1,33 @@
+version: '3'
+services:
+  meta2:
+    image: tleemcjr/metasploitable2
+    container_name: meta2
+    networks:
+        infosec_pentest:
+          ipv4_address: 172.20.0.2
+    hostname: victim
+    tty: true
+    restart: "no"
+
+  
+  kali:
+    image: kali-metasploit:latest
+    container_name: kali
+    build:
+      dockerfile: ./Dockerfile
+    networks:
+      infosec_pentest:
+          ipv4_address: 172.20.0.3
+    hostname: attacker
+    tty: true
+    restart: "no"
+    environment:
+      - TERM=xterm-256color
+
+networks:
+  infosec_pentest:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
