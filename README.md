@@ -28,10 +28,6 @@ From kali, run:
 nmap -F 172.20.0.2
 ```
 
-```bash
-make down
-```
-
 ## Penetration
 
 From kali:
@@ -57,4 +53,8 @@ touch you_are_pwned
 ```bash
 whoami #root
 ```
+## Stop the containers
 
+```bash
+make down
+```
