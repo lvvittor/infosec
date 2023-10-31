@@ -51,10 +51,6 @@ exploit
 Now to check previliges, directly type:
 
 ```bash
-touch you_are_pwned
-```
-
-```bash
 whoami #root
 ```
 
