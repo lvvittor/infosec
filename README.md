@@ -100,7 +100,7 @@ bg # Go back to msfconsole
 
 From kali terminal:
 ```bash
-less -r out.txt # Open linpeas file
+less -r out.txt # Open linpeas file, search for /irc in the file
 ```
 
 Go back to the session:

@@ -4,6 +4,7 @@ FROM kalilinux/kali-rolling
 RUN apt-get update && apt-get install -y \
     metasploit-framework \
     net-tools \
+    netcat-traditional \
     nmap \
     && apt-get clean
 
